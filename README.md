@@ -50,47 +50,36 @@ Very simplified, a topic is similar to a folder in a filesystem, and the events 
 ![Topic_Kafka](https://user-images.githubusercontent.com/88526990/225186658-c0dcd571-9414-4fb4-a5ee-8e838729f7f1.jpg)
 
 ## Properties of Topics
-**1) Partitions**<br>
-Topics are split in Partitions. Then the Partitions are distributed among the brokers using the Round Robin algorithm.
+**1) Partitions**
 <br><br>
 ![Partitions_kafka](https://user-images.githubusercontent.com/88526990/225188062-e1e1bf0b-6d7b-4980-8403-c64ca407ae7c.jpg)
 <br>
-**fig.discription** Here Topics are splits into the Partitions P0, P1, P2
+**fig.discription** Here Topic **'Mytopic** is split into the three Partitions P0, P1, P2 respectively.
+<br>
+<br>
+![Partitions_kafka_p0](https://user-images.githubusercontent.com/88526990/225223862-30b98f3c-f8e0-4b17-9e9c-e8cefd4184b2.jpg)<br>
+**fig.discription** Partition **P0** is transfer from topic 'Mytopic' into the **Brocker 1**
+<br>
+<br>
+![Partitions_kafka_p1](https://user-images.githubusercontent.com/88526990/225224668-b61a4a6c-1043-48e8-af12-fcf12430b57e.jpg)<br>
+**fig.discription** Partition **P1** is transfer from topic 'Mytopic' into the **Brocker 2**
+<br>
+<br>
+![Partitions_kafka_p2](https://user-images.githubusercontent.com/88526990/225224751-2d7cf43b-cf71-41a5-93b8-8619c8a2f9f6.jpg)<br>
+**fig.discription** Partition **P2** is transfer from topic 'Mytopic' into the **Brocker 1**
+<br>
+The Partitions are distributed among the brokers using the **Round Robin** algorithm.
+
+
+
 
 2) Replications
-
-### Kafka Architecture
-Kafka architecture consists of a **storage layer** and a **compute layer**. 
 <br>
-The storage layer is designed to store data efficiently.
-The compute layer consists of four core components -
-<br>
-1) Producer
-2) Consumer
-3) Streams
-4) Connector APIs
-
-## Kafka Components
-
-#### 1) Cluster
-Combination of commodity hardwares or cluster is a group of servers.
-
-#### 2) Brocker
-A Broker is a Kafka server that runs in a Kafka Cluster.<br>
-Kafka Brokers form a cluster<br>
-It is data storage part.
-
-#### 3) Topic
-A space name given within kafka.
-It is data storage part.
+In case of Kafka, the replica means backup of partitions. Here the copy of partition from the topic is store inside the different brokers.<br>
+Consider below given fig. 
 
 
-2) Topic
-3) Partitions
-4) Replicas
-5) Offsets
-6) Commits
-7) Consumer groups
-8) Parallelism 
-9) Back pressure
+
+
+
 
