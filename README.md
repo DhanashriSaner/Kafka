@@ -54,29 +54,36 @@ Very simplified, a topic is similar to a folder in a filesystem, and the events 
 <br><br>
 ![Partitions_kafka](https://user-images.githubusercontent.com/88526990/225188062-e1e1bf0b-6d7b-4980-8403-c64ca407ae7c.jpg)
 <br>
-**fig.discription** Here Topic **'Mytopic** is split into the three Partitions P0, P1, P2 respectively.
+**fig.discription:** Here Topic **'MyTopic** is split into the three Partitions P0, P1, P2 respectively.
 <br>
 <br>
 ![Partitions_kafka_p0](https://user-images.githubusercontent.com/88526990/225223862-30b98f3c-f8e0-4b17-9e9c-e8cefd4184b2.jpg)<br>
-**fig.discription** Partition **P0** is transfer from topic 'Mytopic' into the **Brocker 1**
+**fig.discription:** Partition **P0** is transfer from topic 'MyTopic' into the **Brocker 1**
 <br>
 <br>
 ![Partitions_kafka_p1](https://user-images.githubusercontent.com/88526990/225224668-b61a4a6c-1043-48e8-af12-fcf12430b57e.jpg)<br>
-**fig.discription** Partition **P1** is transfer from topic 'Mytopic' into the **Brocker 2**
+**fig.discription:** Partition **P1** is transfer from topic 'MyTopic' into the **Brocker 2**
 <br>
 <br>
 ![Partitions_kafka_p2](https://user-images.githubusercontent.com/88526990/225224751-2d7cf43b-cf71-41a5-93b8-8619c8a2f9f6.jpg)<br>
-**fig.discription** Partition **P2** is transfer from topic 'Mytopic' into the **Brocker 1**
+**fig.discription:** Partition **P2** is transfer from topic 'MyTopic' into the **Brocker 1**
 <br>
 The Partitions are distributed among the brokers using the **Round Robin** algorithm.
 
 
-
-
-2) Replications
+**2) Replications**
 <br>
 In case of Kafka, the replica means backup of partitions. Here the copy of partition from the topic is store inside the different brokers.<br>
-Consider below given fig. 
+Consider below given fig. <br>
+
+![replica_kafka](https://user-images.githubusercontent.com/88526990/225344847-03b0c60b-ee1c-4958-944a-6bb611fccaf8.jpg)<br>
+**fig.discription:** Partition = **3** and Replication Factor = **2**<br>
+<br>
+The partitions are replicated inside the brockers, as shown in below given fig.
+<br><br>
+![replication_factor_kafka](https://user-images.githubusercontent.com/88526990/225348535-b2c99e64-d8ed-42c1-8d72-8956ac33a986.jpg)<br>
+**fig.discription:** Partitions **P0, P1, P2** are replicated inside the Brokers.
+
 
 
 
