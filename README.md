@@ -28,19 +28,19 @@ Kafka is a distributed system consisting of **servers** and **clients** that com
 **Servers:** Kafka is run as a cluster of one or more servers that can span multiple datacenters or cloud regions. Some of these servers form the storage layer, called the brokers. Other servers run Kafka Connect to continuously import and export data as event streams to integrate Kafka with your existing systems such as relational databases as well as other Kafka clusters.<br>
 **Clients:** They allow you to write distributed applications and microservices that read, write, and process streams of events in parallel, at scale, and in a fault-tolerant manner even in the case of network problems or machine failures. 
 
-## Main concepts and Terminology
-An **event** records the fact that "something happened" in the world or in your business. It is also called record or message in the documentation. 
+# Main concepts and Terminology
+
+## Event
+An event records the fact that "something happened" in the world or in your business. It is also called record or message in the documentation. 
 <br>
-Here's an example event:
 <br>
-Event key: "Alice"<br>
-Event value: "Made a payment of $200 to Bob"<br>
-Event timestamp: "Jun. 25, 2020 at 2:06 p.m."
-<br><br>
-**Producers** are those client applications that publish (write) events to Kafka.<br>
-**consumers** are those that subscribe to (read and process) events.
-<br><br>
-**Topics**<br>
+Here is an example of event:
+<br>
+**Event key:** "Alice"<br>
+**Event value:** "Made a payment of $200 to Bob"<br>
+**Event timestamp:** "Jun. 25, 2020 at 2:06 p.m."
+
+## Topics
 A stream of message belonging to a particular category is called a topic.<br>
 It is similar to a table in database.<br>
 Unique Identifier of a topic is **NAME**<br>
@@ -49,7 +49,7 @@ Very simplified, a topic is similar to a folder in a filesystem, and the events 
 <br><br>
 ![Topic_Kafka](https://user-images.githubusercontent.com/88526990/225186658-c0dcd571-9414-4fb4-a5ee-8e838729f7f1.jpg)
 
-## Properties of Topics
+### Properties of Topics
 **1) Partitions**
 <br><br>
 ![Partitions_kafka](https://user-images.githubusercontent.com/88526990/225188062-e1e1bf0b-6d7b-4980-8403-c64ca407ae7c.jpg)
@@ -58,7 +58,7 @@ Very simplified, a topic is similar to a folder in a filesystem, and the events 
 <br>
 <br>
 ![Partitions_kafka_p0](https://user-images.githubusercontent.com/88526990/225223862-30b98f3c-f8e0-4b17-9e9c-e8cefd4184b2.jpg)<br>
-**fig.discription:** Partition **P0** is transfer from topic 'MyTopic' into the **Brocker 1**
+**fig.discription:** Partition **P0** is transfer from topic 'MyTopic' into the **Brocker 1**<br>
 <br>
 <br>
 ![Partitions_kafka_p1](https://user-images.githubusercontent.com/88526990/225224668-b61a4a6c-1043-48e8-af12-fcf12430b57e.jpg)<br>
@@ -69,7 +69,8 @@ Very simplified, a topic is similar to a folder in a filesystem, and the events 
 **fig.discription:** Partition **P2** is transfer from topic 'MyTopic' into the **Brocker 1**
 <br>
 The Partitions are distributed among the brokers using the **Round Robin** algorithm.
-
+<br>
+<br>
 
 **2) Replications**
 <br>
@@ -84,9 +85,40 @@ The partitions are replicated inside the brockers, as shown in below given fig.
 ![replication_factor_kafka](https://user-images.githubusercontent.com/88526990/225348535-b2c99e64-d8ed-42c1-8d72-8956ac33a986.jpg)<br>
 **fig.discription:** Partitions **P0, P1, P2** are replicated inside the Brokers.
 
+## Producers
+
+Producers are the applications which write/publish data to the topics within a cluster using the Producing APIs.<br>
+Producers can write data either on topic level(All the Partitions of that topic) or specific partitions of the topic.
+
+## Consumers
+Consumers are the applications which read/consume data from the topics within a cluster using the Consuming APIs.<br>
+Consumers can read data either on topic level(All the Partitions of that topic) or specific partitions of the topic.<br>
+Consumers are associated with exactly one **Consumer Group**.<br>
+A Consumer Group is a group of related consumers that perform a task.
+
+## Brokers
+Brokers are simple software processes who maintain and manage the published messages.<br>
+Brokers are also known as **Kafka Servers**.<br>
+Brokers also manage the **Consumer-offsets** and are responsible for the delivery of messages to the right consumers.<br>
+A set of brokers who are communicating with each other to perform the management and maintenance task are collectively known as **Kafka Cluster.**<br>
+We can add more brokers in a ready running kafka cluster without any downtime, which ensures that the horizontal scalability is possible.
+
+## Zookeeper
+Zookeeper is used to **monitor Kafka Cluster** and co-ordinate with each broker.<br>
+It is used for controller election within kafka cluster.<br>
+A set of Zookeepers nodes working together to manage other distributed systems is known as Zookeeper Cluster or **"Zookeeper Ensemble".**<br>
+Keeps all the metadata information related to kafka cluster in the form of a key-value-pair.<br>
+Metadata includes<br>
+1. Configuration Information.<br>
+2. Health status of each broker.
+<br>
+
+![Kafka-Cluster-Architecture-1024x544](https://user-images.githubusercontent.com/88526990/225487146-f62174cc-1678-40c0-8b55-c4374af8cfe9.png)
 
 
 
 
 
 
+
+ 
