@@ -2,11 +2,11 @@
 
 Kafka is a **Distributed** Message Streaming Platform that uses **Publish** and **Subscribe** mechanism to stream the records.<br>
 Kafka was originally developed by **LinkedIn** and later denoted to apache foundation.<br>
-Kafka is an**open-source.**
+Kafka is an **open-source.**
 
 
 ### What is Event Streaming?
-Event streaming is the practice of capturing data in real-time from event sources like databases, sensors, mobile devices, cloud services, and software applications in the form of streams of events
+Event streaming is the practice of capturing data in real-time from event sources like databases, sensors, mobile devices, cloud services, and software applications in the form of streams of events.
 
 ### What can I use event streaming for?
 1) To process payments and financial transactions in real-time, such as in stock exchanges, banks, and insurances.
@@ -58,15 +58,15 @@ Very simplified, a topic is similar to a folder in a filesystem, and the events 
 <br>
 <br>
 ![Partitions_kafka_p0](https://user-images.githubusercontent.com/88526990/225223862-30b98f3c-f8e0-4b17-9e9c-e8cefd4184b2.jpg)<br>
-**fig.discription:** Partition **P0** is transfer from topic 'MyTopic' into the **Brocker 1**<br>
+**fig.discription:** Partition **P0** is transfer from topic 'MyTopic' into the **Broker 1**<br>
 <br>
 <br>
 ![Partitions_kafka_p1](https://user-images.githubusercontent.com/88526990/225224668-b61a4a6c-1043-48e8-af12-fcf12430b57e.jpg)<br>
-**fig.discription:** Partition **P1** is transfer from topic 'MyTopic' into the **Brocker 2**
+**fig.discription:** Partition **P1** is transfer from topic 'MyTopic' into the **Broker 2**
 <br>
 <br>
 ![Partitions_kafka_p2](https://user-images.githubusercontent.com/88526990/225224751-2d7cf43b-cf71-41a5-93b8-8619c8a2f9f6.jpg)<br>
-**fig.discription:** Partition **P2** is transfer from topic 'MyTopic' into the **Brocker 1**
+**fig.discription:** Partition **P2** is transfer from topic 'MyTopic' into the **Broker 1**
 <br>
 The Partitions are distributed among the brokers using the **Round Robin** algorithm.
 <br>
