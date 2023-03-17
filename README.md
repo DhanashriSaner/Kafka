@@ -79,8 +79,7 @@ Consider below given fig. <br>
 
 ![replica_kafka](https://user-images.githubusercontent.com/88526990/225344847-03b0c60b-ee1c-4958-944a-6bb611fccaf8.jpg)<br>
 **fig.discription:** Partition = **3** and Replication Factor = **2**<br>
-<br>
-The partitions are replicated inside the brockers, as shown in below given fig.
+
 <br><br>
 ![replication_factor_kafka](https://user-images.githubusercontent.com/88526990/225348535-b2c99e64-d8ed-42c1-8d72-8956ac33a986.jpg)<br>
 **fig.discription:** Partitions **P0, P1, P2** are replicated inside the Brokers.
