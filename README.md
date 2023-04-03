@@ -116,7 +116,9 @@ Metadata includes<br>
 
 
 
+### How To Install Apache Kafka on Ubuntu 20.04
 
+https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-ubuntu-20-04
 
 
 
